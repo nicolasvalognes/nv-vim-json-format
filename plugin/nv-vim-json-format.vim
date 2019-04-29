@@ -5,6 +5,7 @@ function! s:jsonFormat()
   execute ":g/None/s/None/\"None\"/g"
   execute ":w"
   execute ":%!python3 -m json.tool"
+  execute "normal! ggVG="
 endfunction
 
 command! -nargs=0 JsonFormat :call <SID>jsonFormat()
